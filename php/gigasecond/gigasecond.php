@@ -1,10 +1,8 @@
 <?php
 
-$GIGASECOND = new DateInterval('PT1000000000S');
-
 function from($datetime_object) {
-    global $GIGASECOND;
+    $gigasecond = '+1000000000 seconds';
     $gs = clone $datetime_object;
-    $gs->add($GIGASECOND);
+    $gs->modify($gigasecond);
     return $gs;
 }
